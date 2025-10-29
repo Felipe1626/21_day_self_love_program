@@ -29,7 +29,8 @@
     // FIX TS5069: Added 'composite' as prerequisite for 'tsBuildInfoFile'
     "composite": true, 
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2023",
+    // FIX TS6046: Changed 'ES2023' to 'ESNext' for broad compiler compatibility
+    "target": "ESNext",
     "lib": ["ES2023"],
     "module": "ESNext",
     "types": ["node"],
@@ -54,3 +55,4 @@
   },
   "include": ["vite.config.ts"]
 }
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useProgress } from './hooks/useProgress'; // Assuming type safety is added here 
 import DayButton from "./components/DayButton";
  import DayModal from './components/DayModal';
