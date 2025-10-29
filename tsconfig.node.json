@@ -1,5 +1,33 @@
+// {
+//   "compilerOptions": {
+//     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+//     "target": "ES2023",
+//     "lib": ["ES2023"],
+//     "module": "ESNext",
+//     "types": ["node"],
+//     "skipLibCheck": true,
+
+//     /* Bundler mode */
+//     "moduleResolution": "bundler",
+//     "allowImportingTsExtensions": true,
+//     "verbatimModuleSyntax": true,
+//     "moduleDetection": "force",
+//     "noEmit": true,
+
+//     /* Linting */
+//     "strict": true,
+//     "noUnusedLocals": true,
+//     "noUnusedParameters": true,
+//     "erasableSyntaxOnly": true,
+//     "noFallthroughCasesInSwitch": true,
+//     "noUncheckedSideEffectImports": true
+//   },
+//   "include": ["vite.config.ts"]
+// }
 {
   "compilerOptions": {
+    // FIX TS5069: Added 'composite' as prerequisite for 'tsBuildInfoFile'
+    "composite": true, 
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2023",
     "lib": ["ES2023"],
@@ -18,9 +46,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    // FIX TS5023: Removed unknown/experimental compiler options
+    // "erasableSyntaxOnly": true, 
+    "noFallthroughCasesInSwitch": true
+    // FIX TS5023: Removed unknown/experimental compiler options
+    // "noUncheckedSideEffectImports": true
   },
   "include": ["vite.config.ts"]
 }
