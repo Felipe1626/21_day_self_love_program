@@ -1,6 +1,6 @@
 import type { MorningPrompt } from "../types";
 
-export const BASE_NIGHT_RELAXATION = (onBlur: (field: string, value: string) => void) => `
+export const BASE_NIGHT_RELAXATION = `
   <div class="p-4 rounded-xl shadow-md bg-night-card border-l-4 border-indigo-500">
     <h3 class="font-bold text-xl text-indigo-700 mb-3 flex items-center">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
@@ -19,7 +19,6 @@ export const BASE_NIGHT_RELAXATION = (onBlur: (field: string, value: string) => 
     </ul>
   </div>
 `;
-
 export const STRETCHING_BUTTON_HTML = `
   <div class="mt-6 mb-6">
     <a href="https://youtu.be/xAHqX0ZfLsA?si=6wxjVExoOeG2lORG" target="_blank"

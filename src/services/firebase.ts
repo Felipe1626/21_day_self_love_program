@@ -7,17 +7,32 @@ import {
 } from 'firebase/auth';
 import { getFirestore, Firestore } from 'firebase/firestore';
 
+// Extend the Window interface to include custom properties
+declare global {
+  interface Window {
+    __app_id?: string;
+    __firebase_config?: string;
+    __initial_auth_token?: string;
+  }
+}
+
 // Global variables from Canvas environment
-const appId = typeof (window as any).__app_id !== 'undefined' 
-  ? (window as any).__app_id 
+const appId = typeof window.__app_id !== 'undefined' 
+  ? window.__app_id 
   : 'default-app-id';
 
-const firebaseConfig = typeof (window as any).__firebase_config !== 'undefined' 
-  ? JSON.parse((window as any).__firebase_config) 
-  : {};
+const firebaseConfig = {
+    apiKey: "AIzaSyBVudeIGPGEz-AMvWnbDZ16Hwru63mx1ok",
+    authDomain: "programa-21-dias.firebaseapp.com",
+    databaseURL: "https://programa-21-dias-default-rtdb.firebaseio.com",
+    projectId: "programa-21-dias",
+    storageBucket: "programa-21-dias.firebasestorage.app",
+    messagingSenderId: "685743291261",
+    appId: "1:685743291261:web:13ee6cff1bce8ccd782a14"
+};
 
-const initialAuthToken = typeof (window as any).__initial_auth_token !== 'undefined' 
-  ? (window as any).__initial_auth_token 
+const initialAuthToken = typeof window.__initial_auth_token !== 'undefined' 
+  ? window.__initial_auth_token 
   : null;
 
 let app: FirebaseApp | null = null;

@@ -23,12 +23,11 @@ const DayModal: React.FC<DayModalProps> = ({
   activeDaysCount,
   showToast
 }) => {
-  const [progress, setProgress] = useState<DayProgress>(initialProgress);
+  const [progress] = useState<DayProgress>(initialProgress);
   const contentRef = useRef<HTMLDivElement>(null);
   const routinesRef = useRef<HTMLDivElement>(null);
 
   const dayData = dailyContent[dayIndex];
-  const dayNumber = dayIndex + 1;
 
   // Inject textareas into content
   const injectTextAreas = (content: string): string => {
@@ -194,11 +193,11 @@ const DayModal: React.FC<DayModalProps> = ({
       const commentBtn = document.getElementById('comment-button');
       if (commentBtn && activeDaysCount >= 15) {
         commentBtn.addEventListener('click', () => {
-          showToast('¡Felicitaciones! Enlace de reseña simulado. Abrir una nueva pestaña para el formulario.', 5000);
+          showToast('¡Felicitaciones! Enlace de reseña simulado. Abrir una nueva pestaña para el formulario.');
         });
       } else if (commentBtn) {
         commentBtn.addEventListener('click', () => {
-          showToast(`Necesitas registrar tu actividad en al menos 15 días para desbloquear el comentario. Llevas ${activeDaysCount} días.`, 5000);
+          showToast(`Necesitas registrar tu actividad en al menos 15 días para desbloquear el comentario. Llevas ${activeDaysCount} días.`);
         });
       }
     };
