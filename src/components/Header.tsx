@@ -3,14 +3,20 @@ import WeeklyObjectives from './WeeklyObjectives';
 
 interface HeaderProps {
   onOpenCrisisModal: () => void;
+  userName?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ onOpenCrisisModal }) => {
+const Header: React.FC<HeaderProps> = ({ onOpenCrisisModal, userName }) => {
   return (
     <header className="text-center mb-6 mt-4">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-primary-indigo tracking-tight">
         Programa de 21 Días Amor Propio
       </h1>
+      {userName && (
+        <p className="mt-2 text-2xl font-semibold text-purple-600">
+          ¡Bienvenida, {userName}! 💜
+        </p>
+      )}
       <p className="mt-3 text-xl text-gray-600">
         Tu camino hacia la transformación y el bienestar.
       </p>
@@ -22,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenCrisisModal }) => {
           href="https://fibroytransformacion.wixsite.com/fibromialgia/blog" 
           target="_blank"
           rel="noopener noreferrer"
-          className="action-button-style px-4 py-2 bg-info-gray text-white font-extrabold rounded-full hover:bg-gray-500 transition duration-200 shadow-lg border-b-4 border-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-opacity-50 text-base sm:text-lg flex items-center justify-center"
+          className="action-button-style px-4 py-2 bg-violet-300 text-white font-extrabold rounded-full hover:bg-violet-500 transition duration-200 shadow-lg border-b-4 border-violet-600 focus:outline-none focus:ring-2 focus:ring-violet-300 focus:ring-opacity-50 text-base sm:text-lg flex items-center justify-center"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-6h2v6zm0-8h-2V7h2v4z"/>

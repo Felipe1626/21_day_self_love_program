@@ -1,4 +1,4 @@
-import type { DayContent } from '../types';
+import { type DayContent } from '../types';
 
 export const dailyContent: DayContent[] = [
   { 
@@ -27,6 +27,8 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
       <p>5 minutos, tres veces al día. Inhala en 4 tiempos, retén 2, exhala en 6. Visualiza: con cada exhalación, liberas tensión y cansancio.</p>
       <p>Apóyate con música suave o sonidos naturales.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>¿Cómo te sentiste durante esta práctica de respiración?</p>
     `
   },
   { 
@@ -36,6 +38,8 @@ export const dailyContent: DayContent[] = [
       <p>Siéntate en silencio 5 minutos. Lleva la atención a distintas partes del cuerpo. Pregúntate: "¿Qué necesita hoy esta parte de mí?"</p>
       <p>Anota sensaciones sin juzgarlas.</p>
       <p class="text-xs italic mt-2 text-gray-500">Recordatorio: La hidratación se mantiene como apoyo diario.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>Anota las sensaciones que detectaste en tu cuerpo:</p>
     `
   },
   { 
@@ -86,6 +90,8 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo">✅ Ejercicio:</h3>
       <p>Realiza una caminata de 15 minutos a un ritmo muy lento y cómodo. Se trata de mover la energía estancada. Si no puedes caminar, haz movimientos suaves de brazos y cuello.</p>
       <p class="mt-2">Detente si sientes fatiga o dolor intenso.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>¿Cómo respondió tu cuerpo al movimiento suave de hoy?</p>
     `
   },
   { 
@@ -114,6 +120,8 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
       <p>Conviértete en tu mejor amiga/o. Cada vez que te detectes un pensamiento autocrítico, detente y reformúlalo en algo compasivo y realista.</p>
       <p>Por ejemplo: "Soy suficiente tal y como soy hoy."</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>¿Qué pensamientos autocríticos detectaste? ¿Cómo los transformaste?</p>
     `
   },
   { 
@@ -136,6 +144,8 @@ export const dailyContent: DayContent[] = [
       <p>Relee tu diario de la última semana. Identifica tu mayor reto y tu mayor avance.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">🎯 Meta:</h3>
       <p>Elige una práctica de esta semana para integrarla en tu rutina diaria.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>¿Cuál fue tu mayor reto esta semana? ¿Cuál fue tu mayor avance?</p>
     `
   },
   { 
@@ -144,6 +154,8 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
       <p>Usa una crema con olor agradable. Dedica 5 minutos a masajear suavemente tus manos y luego tus pies. Usa movimientos lentos y circulares.</p>
       <p>Esto ayuda a liberar tensión en puntos clave.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>¿Qué sensaciones descubriste durante el automasaje?</p>
     `
   },
   { 
@@ -160,6 +172,8 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo">✅ Meditación Guiada:</h3>
       <p>Cierra los ojos e imagina una luz cálida y sanadora que entra por tu cabeza y recorre cada parte de tu cuerpo. Visualiza cómo esta luz calma el dolor y devuelve la vitalidad.</p>
       <p>Mantente en esta visualización por 10 minutos.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>¿Qué sensaciones experimentaste durante la visualización?</p>
     `
   },
   { 
@@ -168,6 +182,8 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo">✅ Ejercicio:</h3>
       <p>Además de tu cuerpo, nombra 5 cosas externas (personas, momentos, objetos) por las que sientes profunda gratitud hoy. Siente esa emoción en tu pecho.</p>
       <p>La gratitud eleva la vibración y ayuda a manejar el dolor.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>Escribe tus 5 motivos de gratitud:</p>
     `
   },
   { 
@@ -176,6 +192,8 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo">✅ Conciencia Corporal:</h3>
       <p>A lo largo del día, haz una pausa de 30 segundos cada hora. Chequea tu postura: hombros relajados, espalda recta, mentón paralelo al suelo.</p>
       <p><strong>Mini-Afirmación:</strong> "Mi cuerpo es fuerte y alineado."</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>¿Qué cambios notaste en tu cuerpo al mejorar tu postura?</p>
     `
   },
   { 
@@ -195,6 +213,8 @@ export const dailyContent: DayContent[] = [
       <p>Prepara una vela morada y enciéndela con esta intención: <strong>"Transformo el dolor en sabiduría. Soy luz, soy fuerza, soy renacimiento".</strong></p>
       <p>Coloca tu diario y tus frases a tu alrededor. Respira, sonríe y honra tu camino.</p>
       <h3 class="font-extrabold text-2xl text-primary-indigo mt-4 text-center">¡Felicitaciones! ¡Lo lograste guerrer@!</h3>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>Reflexión final: ¿Qué has aprendido en estos 21 días?</p>
     `
   }
 ];

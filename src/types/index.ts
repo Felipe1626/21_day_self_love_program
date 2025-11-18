@@ -13,8 +13,15 @@ export interface DayProgress {
   morningIntention?: string;
   nightGratitude?: string;
   dayActivities?: string[];
+  lastUpdated?: Date;
 }
 
 export interface ProgressData {
   [dayId: string]: DayProgress;
+}
+
+export interface UserProfile {
+  name: string;
+  createdAt: Date;
+  lastActive: Date;
 }

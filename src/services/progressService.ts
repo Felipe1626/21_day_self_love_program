@@ -3,11 +3,11 @@ import {
   getDoc, 
   setDoc, 
   collection, 
-  getDocs,
-  type DocumentData
+  getDocs, 
+  type UpdateData
 } from 'firebase/firestore';
 import { Firestore } from 'firebase/firestore';
-import { type DayProgress, type DayContent, type ProgressData } from '../types';
+import { type DayProgress, type UserProfile, type ProgressData } from '../types';
 
 export const getDayDocRef = (
   db: Firestore, 
@@ -17,6 +17,70 @@ export const getDayDocRef = (
 ) => {
   const dayId = `day-${dayIndex + 1}`;
   return doc(db, 'artifacts', appId, 'users', userId, 'challenge_progress', dayId);
+};
+
+export const getUserProfileRef = (
+  db: Firestore,
+  appId: string,
+  userId: string
+) => {
+  return doc(db, 'artifacts', appId, 'users', userId, 'profile', 'user_data');
+};
+
+export const saveUserProfile = async (
+  db: Firestore,
+  appId: string,
+  userId: string,
+  name: string
+): Promise<boolean> => {
+  const profileRef = getUserProfileRef(db, appId, userId);
+  
+  try {
+    const profile: UserProfile = {
+      name,
+      createdAt: new Date(),
+      lastActive: new Date()
+    };
+    
+    await setDoc(profileRef, profile, { merge: true });
+    return true;
+  } catch (error) {
+    console.error("Error saving user profile:", error);
+    return false;
+  }
+};
+
+export const getUserProfile = async (
+  db: Firestore,
+  appId: string,
+  userId: string
+): Promise<UserProfile | null> => {
+  const profileRef = getUserProfileRef(db, appId, userId);
+  
+  try {
+    const docSnap = await getDoc(profileRef);
+    if (docSnap.exists()) {
+      return docSnap.data() as UserProfile;
+    }
+    return null;
+  } catch (error) {
+    console.error("Error loading user profile:", error);
+    return null;
+  }
+};
+
+export const updateLastActive = async (
+  db: Firestore,
+  appId: string,
+  userId: string
+): Promise<void> => {
+  const profileRef = getUserProfileRef(db, appId, userId);
+  
+  try {
+    await setDoc(profileRef, { lastActive: new Date() }, { merge: true });
+  } catch (error) {
+    console.error("Error updating last active:", error);
+  }
 };
 
 export const saveDayProgress = async (
@@ -32,7 +96,7 @@ export const saveDayProgress = async (
   
   try {
     const docSnap = await getDoc(docRef);
-    const updateData: DocumentData = {};
+    const updateData: UpdateData = {};
     
     if (field === 'dayActivities') {
       const activities = docSnap.exists() && docSnap.data().dayActivities 
@@ -47,7 +111,14 @@ export const saveDayProgress = async (
       updateData[field] = value;
     }
     
+    // Also update last active timestamp
+    updateData.lastUpdated = new Date();
+    
     await setDoc(docRef, updateData, { merge: true });
+    
+    // Update user's last active time
+    await updateLastActive(db, appId, userId);
+    
     return true;
   } catch (error) {
     console.error("Error saving progress:", error);
@@ -113,7 +184,8 @@ export const downloadProgress = async (
   db: Firestore,
   appId: string,
   userId: string,
-  dailyContent: DayContent[]
+  dailyContent: [],
+  userName: string
 ) => {
   const progressRef = collection(
     db, 
@@ -137,6 +209,7 @@ export const downloadProgress = async (
       .sort((a, b) => parseInt(a.split('-')[1]) - parseInt(b.split('-')[1]));
 
     let fileContent = "DIARIO DE TRANSFORMACIÓN - PROGRAMA 21 DÍAS AMOR PROPIO\n";
+    fileContent += `Participante: ${userName}\n`;
     fileContent += `Usuario ID: ${userId}\n`;
     fileContent += `Fecha de Descarga: ${new Date().toLocaleDateString()}\n\n`;
     fileContent += "=================================================\n\n";
@@ -165,7 +238,7 @@ export const downloadProgress = async (
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `Progreso_21_Dias_Amor_Propio_${new Date().toLocaleDateString()}.txt`;
+    a.download = `Progreso_21_Dias_${userName.replace(/\s+/g, '_')}_${new Date().toLocaleDateString()}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

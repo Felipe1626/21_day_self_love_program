@@ -23,11 +23,12 @@ const DayModal: React.FC<DayModalProps> = ({
   activeDaysCount,
   showToast
 }) => {
-  const [progress] = useState<DayProgress>(initialProgress);
   const contentRef = useRef<HTMLDivElement>(null);
   const routinesRef = useRef<HTMLDivElement>(null);
+  const [isContentReady, setIsContentReady] = useState(false);
 
   const dayData = dailyContent[dayIndex];
+  const dayNumber = dayIndex + 1;
 
   // Inject textareas into content
   const injectTextAreas = (content: string): string => {
@@ -85,7 +86,98 @@ const DayModal: React.FC<DayModalProps> = ({
     `;
   };
 
-  // Set up content and event listeners
+  // Populate textarea values from saved progress
+  const populateTextareaValues = () => {
+    if (!contentRef.current || !routinesRef.current) return;
+
+    console.log('Populating values with progress:', initialProgress);
+
+    // Populate content textareas (dayActivities)
+    const contentTextareas = contentRef.current.querySelectorAll('textarea[data-field="dayActivities"]');
+    contentTextareas.forEach((textarea) => {
+      const element = textarea as HTMLTextAreaElement;
+      const activityIndex = element.dataset.activityIndex;
+
+      if (activityIndex !== undefined) {
+        const index = parseInt(activityIndex, 10);
+        const value = initialProgress.dayActivities?.[index] || '';
+        element.value = value;
+        console.log(`Set dayActivity[${index}]:`, value);
+      }
+    });
+
+    // Populate routine textareas
+    const routineTextareas = routinesRef.current.querySelectorAll('textarea[data-field]');
+    routineTextareas.forEach((textarea) => {
+      const element = textarea as HTMLTextAreaElement;
+      const field = element.dataset.field;
+
+      if (field === 'morningAffirmation') {
+        element.value = initialProgress.morningAffirmation || '';
+        console.log('Set morningAffirmation:', element.value);
+      } else if (field === 'morningIntention') {
+        element.value = initialProgress.morningIntention || '';
+        console.log('Set morningIntention:', element.value);
+      } else if (field === 'nightGratitude') {
+        element.value = initialProgress.nightGratitude || '';
+        console.log('Set nightGratitude:', element.value);
+      }
+    });
+  };
+
+  // Attach event listeners
+  const attachEventListeners = () => {
+    if (!contentRef.current || !routinesRef.current) return;
+
+    // Content textareas (dayActivities)
+    const contentTextareas = contentRef.current.querySelectorAll('textarea[data-field="dayActivities"]');
+    contentTextareas.forEach((textarea) => {
+      const element = textarea as HTMLTextAreaElement;
+      const activityIndex = element.dataset.activityIndex;
+
+      element.addEventListener('blur', () => {
+        const value = element.value.trim();
+        const actIdx = activityIndex !== undefined ? parseInt(activityIndex, 10) : null;
+        console.log('Saving dayActivity:', { actIdx, value });
+        onSave('dayActivities', value, actIdx);
+      });
+    });
+
+    // Routine textareas
+    const routineTextareas = routinesRef.current.querySelectorAll('textarea[data-field]');
+    routineTextareas.forEach((textarea) => {
+      const element = textarea as HTMLTextAreaElement;
+      const field = element.dataset.field;
+
+      if (!field) return;
+
+      element.addEventListener('blur', () => {
+        const value = element.value.trim();
+        console.log('Saving routine field:', { field, value });
+        onSave(field, value, null);
+      });
+    });
+
+    // Download button
+    const downloadBtn = document.getElementById('download-button');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', onDownload);
+    }
+
+    // Comment button
+    const commentBtn = document.getElementById('comment-button');
+    if (commentBtn && activeDaysCount >= 15) {
+      commentBtn.addEventListener('click', () => {
+        showToast('¡Felicitaciones! Enlace de reseña simulado. Abrir una nueva pestaña para el formulario.', 5000);
+      });
+    } else if (commentBtn) {
+      commentBtn.addEventListener('click', () => {
+        showToast(`Necesitas registrar tu actividad en al menos 15 días para desbloquear el comentario. Llevas ${activeDaysCount} días.`, 5000);
+      });
+    }
+  };
+
+  // Initial content setup
   useEffect(() => {
     if (!contentRef.current || !routinesRef.current) return;
 
@@ -138,72 +230,22 @@ const DayModal: React.FC<DayModalProps> = ({
 
     routinesRef.current.innerHTML = morningRoutine + STRETCHING_BUTTON_HTML + nightRoutine + downloadButton;
 
-    // Attach event listeners to all textareas
-    const attachListeners = () => {
-      // Content textareas
-      const contentTextareas = contentRef.current?.querySelectorAll('textarea[data-field]');
-      contentTextareas?.forEach((textarea) => {
-        const element = textarea as HTMLTextAreaElement;
-        const field = element.dataset.field;
-        const activityIndex = element.dataset.activityIndex;
+    // Mark content as ready
+    setIsContentReady(true);
+  }, [dayIndex]);
 
-        // Set initial value
-        if (field === 'dayActivities' && activityIndex !== undefined) {
-          const index = parseInt(activityIndex, 10);
-          element.value = progress.dayActivities?.[index] || '';
-        }
+  // Populate values and attach listeners after content is ready
+  useEffect(() => {
+    if (!isContentReady) return;
 
-        // Add blur event
-        element.addEventListener('blur', () => {
-          const value = element.value.trim();
-          const actIdx = activityIndex !== undefined ? parseInt(activityIndex, 10) : null;
-          onSave(field!, value, actIdx);
-        });
-      });
+    // Small delay to ensure DOM is fully updated
+    const timer = setTimeout(() => {
+      populateTextareaValues();
+      attachEventListeners();
+    }, 50);
 
-      // Routine textareas
-      const routineTextareas = routinesRef.current?.querySelectorAll('textarea[data-field]');
-      routineTextareas?.forEach((textarea) => {
-        const element = textarea as HTMLTextAreaElement;
-        const field = element.dataset.field;
-
-        // Set initial value
-        if (field === 'morningAffirmation') {
-          element.value = progress.morningAffirmation || '';
-        } else if (field === 'morningIntention') {
-          element.value = progress.morningIntention || '';
-        } else if (field === 'nightGratitude') {
-          element.value = progress.nightGratitude || '';
-        }
-
-        // Add blur event
-        element.addEventListener('blur', () => {
-          const value = element.value.trim();
-          onSave(field!, value, null);
-        });
-      });
-
-      // Download button
-      const downloadBtn = document.getElementById('download-button');
-      if (downloadBtn) {
-        downloadBtn.addEventListener('click', onDownload);
-      }
-
-      // Comment button
-      const commentBtn = document.getElementById('comment-button');
-      if (commentBtn && activeDaysCount >= 15) {
-        commentBtn.addEventListener('click', () => {
-          showToast('¡Felicitaciones! Enlace de reseña simulado. Abrir una nueva pestaña para el formulario.');
-        });
-      } else if (commentBtn) {
-        commentBtn.addEventListener('click', () => {
-          showToast(`Necesitas registrar tu actividad en al menos 15 días para desbloquear el comentario. Llevas ${activeDaysCount} días.`);
-        });
-      }
-    };
-
-    attachListeners();
-  }, [dayIndex, progress, activeDaysCount]);
+    return () => clearTimeout(timer);
+  }, [isContentReady, initialProgress]);
 
   return (
     <div 

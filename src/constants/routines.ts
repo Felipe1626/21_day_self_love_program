@@ -1,4 +1,4 @@
-import type { MorningPrompt } from "../types";
+
 
 export const BASE_NIGHT_RELAXATION = `
   <div class="p-4 rounded-xl shadow-md bg-night-card border-l-4 border-indigo-500">
@@ -28,8 +28,7 @@ export const STRETCHING_BUTTON_HTML = `
     </a>
   </div>
 `;
-
-export const getMorningRoutineHtml = (dayIndex: number, morningPrompts: MorningPrompt[]) => {
+export const getMorningRoutineHtml = (dayIndex: number, morningPrompts: { affirmation: string; intentionSuggestion: string }[]) => {
   const dayPrompt = morningPrompts[dayIndex];
   if (!dayPrompt) return '';
 
@@ -53,11 +52,23 @@ export const getMorningRoutineHtml = (dayIndex: number, morningPrompts: MorningP
       <div class="mb-5">
         <p class="font-semibold text-gray-700">Afirmación:</p>
         <p class="text-sm italic text-gray-600">Sugerencia para el Día ${dayIndex + 1}: "${dayPrompt.affirmation}"</p>
+        <textarea 
+          class="w-full mt-2 p-2 border border-yellow-400 rounded-lg text-sm text-gray-700 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition duration-150" 
+          rows="2" 
+          placeholder="Repite tu afirmación del día o escribe la tuya..." 
+          data-field="morningAffirmation"
+        ></textarea>
       </div>
 
       <div class="mb-1">
         <p class="font-semibold text-gray-700">Establece una intención para tu día:</p>
         <p class="text-sm italic text-gray-600">Sugerencia para el Día ${dayIndex + 1}: "${dayPrompt.intentionSuggestion}"</p>
+        <textarea 
+          class="w-full mt-2 p-2 border border-yellow-400 rounded-lg text-sm text-gray-700 focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition duration-150" 
+          rows="2" 
+          placeholder="Escribe tu intención personal para hoy..." 
+          data-field="morningIntention"
+        ></textarea>
       </div>
     </div>
   `;
