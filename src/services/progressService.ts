@@ -4,10 +4,10 @@ import {
   setDoc, 
   collection, 
   getDocs, 
-  type UpdateData
 } from 'firebase/firestore';
 import { Firestore } from 'firebase/firestore';
-import { type DayProgress, type UserProfile, type ProgressData } from '../types';
+import { type DayProgress, type UserProfile, type ProgressData, type DayContent } from '../types';
+
 
 export const getDayDocRef = (
   db: Firestore, 
@@ -88,33 +88,40 @@ export const saveDayProgress = async (
   appId: string,
   userId: string,
   dayIndex: number,
-  field: string,
+  field: keyof DayProgress,
   value: string,
   activityIndex: number | null = null
-) => {
+): Promise<boolean> => {
   const docRef = getDayDocRef(db, appId, userId, dayIndex);
   
   try {
     const docSnap = await getDoc(docRef);
-    const updateData: UpdateData = {};
+    const updateData: Partial<DayProgress> = {};
     
     if (field === 'dayActivities') {
       const activities = docSnap.exists() && docSnap.data().dayActivities 
-        ? docSnap.data().dayActivities 
+        ? [...docSnap.data().dayActivities] 
         : [];
       
       if (activityIndex !== null) {
+        while (activities.length <= activityIndex) {
+          activities.push('');
+        }
         activities[activityIndex] = value;
       }
       updateData[field] = activities;
     } else {
-      updateData[field] = value;
+      // Type assertion needed here because TypeScript can't narrow the union type
+      (updateData as Record<string, string>)[field] = value;
     }
     
-    // Also update last active timestamp
-    updateData.lastUpdated = new Date();
+    // Create a separate object for Firestore with lastUpdated
+    const firestoreData = {
+      ...updateData,
+      lastUpdated: new Date()
+    };
     
-    await setDoc(docRef, updateData, { merge: true });
+    await setDoc(docRef, firestoreData, { merge: true });
     
     // Update user's last active time
     await updateLastActive(db, appId, userId);
@@ -184,7 +191,7 @@ export const downloadProgress = async (
   db: Firestore,
   appId: string,
   userId: string,
-  dailyContent: [],
+  dailyContent: DayContent[],
   userName: string
 ) => {
   const progressRef = collection(
