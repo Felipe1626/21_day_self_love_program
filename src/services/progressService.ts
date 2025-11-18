@@ -3,11 +3,10 @@ import {
   getDoc, 
   setDoc, 
   collection, 
-  getDocs, 
+  getDocs 
 } from 'firebase/firestore';
 import { Firestore } from 'firebase/firestore';
-import { type DayProgress, type UserProfile, type ProgressData, type DayContent } from '../types';
-
+import { type DayProgress, type UserProfile } from '../types';
 
 export const getDayDocRef = (
   db: Firestore, 
@@ -33,6 +32,8 @@ export const saveUserProfile = async (
   userId: string,
   name: string
 ): Promise<boolean> => {
+  console.log('Attempting to save profile:', { appId, userId, name });
+  
   const profileRef = getUserProfileRef(db, appId, userId);
   
   try {
@@ -42,10 +43,17 @@ export const saveUserProfile = async (
       lastActive: new Date()
     };
     
+    console.log('Profile reference path:', profileRef.path);
+    console.log('Profile data:', profile);
+    
     await setDoc(profileRef, profile, { merge: true });
+    console.log('Profile saved successfully');
     return true;
   } catch (error) {
-    console.error("Error saving user profile:", error);
+    const err = error as Error;
+    console.error("Error saving user profile:", err);
+    console.error("Error message:", err.message);
+    
     return false;
   }
 };
@@ -55,16 +63,26 @@ export const getUserProfile = async (
   appId: string,
   userId: string
 ): Promise<UserProfile | null> => {
+  console.log('Attempting to load profile:', { appId, userId });
+  
   const profileRef = getUserProfileRef(db, appId, userId);
   
   try {
+    console.log('Profile reference path:', profileRef.path);
     const docSnap = await getDoc(profileRef);
+    
     if (docSnap.exists()) {
+      console.log('Profile loaded successfully');
       return docSnap.data() as UserProfile;
+    } else {
+      console.log('No profile found - new user');
+      return null;
     }
-    return null;
   } catch (error) {
-    console.error("Error loading user profile:", error);
+    const err = error as Error;
+    console.error('Error loading user profile:', err);
+    console.error('Error message:', err.message);
+    
     return null;
   }
 };
@@ -88,7 +106,7 @@ export const saveDayProgress = async (
   appId: string,
   userId: string,
   dayIndex: number,
-  field: keyof DayProgress,
+  field: string,
   value: string,
   activityIndex: number | null = null
 ): Promise<boolean> => {
@@ -96,7 +114,7 @@ export const saveDayProgress = async (
   
   try {
     const docSnap = await getDoc(docRef);
-    const updateData: Partial<DayProgress> = {};
+    const updateData: Partial<DayProgress> & { lastUpdated?: Date } = {};
     
     if (field === 'dayActivities') {
       const activities = docSnap.exists() && docSnap.data().dayActivities 
@@ -104,24 +122,25 @@ export const saveDayProgress = async (
         : [];
       
       if (activityIndex !== null) {
+        // Ensure array is large enough
         while (activities.length <= activityIndex) {
           activities.push('');
         }
         activities[activityIndex] = value;
       }
-      updateData[field] = activities;
-    } else {
-      // Type assertion needed here because TypeScript can't narrow the union type
-      (updateData as Record<string, string>)[field] = value;
+      updateData.dayActivities = activities;
+    } else if (field === 'morningAffirmation') {
+      updateData.morningAffirmation = value;
+    } else if (field === 'morningIntention') {
+      updateData.morningIntention = value;
+    } else if (field === 'nightGratitude') {
+      updateData.nightGratitude = value;
     }
     
-    // Create a separate object for Firestore with lastUpdated
-    const firestoreData = {
-      ...updateData,
-      lastUpdated: new Date()
-    };
+    // Also update last active timestamp
+    updateData.lastUpdated = new Date();
     
-    await setDoc(docRef, firestoreData, { merge: true });
+    await setDoc(docRef, updateData, { merge: true });
     
     // Update user's last active time
     await updateLastActive(db, appId, userId);
@@ -191,9 +210,9 @@ export const downloadProgress = async (
   db: Firestore,
   appId: string,
   userId: string,
-  dailyContent: DayContent[],
+  dailyContent: Array<{ title: string; content: string }>,
   userName: string
-) => {
+): Promise<boolean> => {
   const progressRef = collection(
     db, 
     'artifacts', 
@@ -205,11 +224,11 @@ export const downloadProgress = async (
   
   try {
     const querySnapshot = await getDocs(progressRef);
-    const progressData: ProgressData = {};
+    const progressData: Record<string, DayProgress> = {};
     
     querySnapshot.forEach(docSnap => {
       const dayId = docSnap.id;
-      progressData[dayId] = docSnap.data();
+      progressData[dayId] = docSnap.data() as DayProgress;
     });
 
     const sortedDays = Object.keys(progressData)
