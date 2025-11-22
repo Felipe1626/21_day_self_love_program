@@ -5,10 +5,8 @@ export const dailyContent: DayContent[] = [
     title: "Día 1: Bienvenida y Gratitud", 
     content: `
       <p class="italic mb-3 font-semibold text-gray-600">"Estás dando el paso más valiente: sanar desde el amor".</p>
-      <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Ejercicio:</h3>
-      <p>Técnica del Espejo y la Afirmación del "Yo Soy
-Suficiente HOY". Escribe 3 cosas por las que agradeces a tu
-cuerpo hoy.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Práctica:</h3>
+      <p>Técnica del Espejo y la Afirmación del "Yo Soy Suficiente HOY". Escribe 3 cosas por las que agradeces a tu cuerpo hoy.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
       <p>¿Qué emociones te genera comenzar este proceso?</p>
     `
@@ -16,7 +14,7 @@ cuerpo hoy.</p>
   { 
     title: "Día 2: Frases de Amor Propio", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Tarea:</h3>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
       <p>Crea 5 poderosas frases (ej. "Merezco descanso sin culpa", "Mi cuerpo no me traiciona, me comunica").</p>
       <p>Colócalas en espejos, paredes o tu rincón favorito.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
@@ -27,30 +25,25 @@ cuerpo hoy.</p>
     title: "Día 3: Respiración Consciente y Presencia", 
     content: `
       <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
-      <p>El Ritual del "Cuerpo Amigo" 5 minutos, tres veces al
-día. repite, mi cuerpo es mi amigo, mi templo aunque duela yo
-puedo escucharlo y amarlo, Abrazate y siente tu propia
-compañia y apoyo. Inhala en 4 tiempos, retén 2, exhala en 6. Visualiza: con cada exhalación, liberas tensión y cansancio.</p>
+      <p><strong>El Ritual del "Cuerpo Amigo"</strong> - 5 minutos, tres veces al día.</p>
+      <p>Repite: "Mi cuerpo es mi amigo, mi templo. Aunque duela yo puedo escucharlo y amarlo".</p>
+      <p>Abrázate y siente tu propia compañía y apoyo.</p>
+      <p class="mt-2">Inhala en 4 tiempos, retén 2, exhala en 6. Visualiza: con cada exhalación, liberas tensión y cansancio.</p>
       <p>Apóyate con música suave o sonidos naturales.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Cómo se siente cuando me abrazo con amor? hoy siente que
-no estas sola/o cuentas con tu amor y comprension.</p>
+      <p>¿Cómo se siente cuando me abrazo con amor? Hoy siente que no estás sola/o, cuentas con tu amor y comprensión.</p>
     `
   },
   { 
     title: "Día 4: Escucha Activa del Cuerpo", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Ejercicio:</h3>
-      <p>"Sombra Aceptada" (Perdón Profundo) Siéntate en silencio
-5 minutos. Lleva la atención a distintas partes del cuerpo. Hay dolor?
-donde duele? como me hace sentir emocionalmente? con compasión
-hacia ti: Pregúntate: "¿Qué necesita hoy esta parte de mí?"</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p><strong>"Sombra Aceptada" (Perdón Profundo)</strong> - Siéntate en silencio 5 minutos. Lleva la atención a distintas partes del cuerpo.</p>
+      <p>¿Hay dolor? ¿Dónde duele? ¿Cómo me hace sentir emocionalmente?</p>
+      <p>Con compasión hacia ti, pregúntate: "¿Qué necesita hoy esta parte de mí?"</p>
       <p>Anota sensaciones sin juzgarlas.</p>
-      <p class="text-xs italic mt-2 text-gray-500">Recordatorio: La hidratación se mantiene como apoyo diario.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Que partes de mi hacen que me juzgue y no me tenga
-compasión? perdonate como perdonas a otros y recuerda que
-hoy haces lo mejor que puedes a pesar de tu dolor.</p>
+      <p>¿Qué partes de mí hacen que me juzgue y no me tenga compasión? Perdónate como perdonas a otros y recuerda que hoy haces lo mejor que puedes a pesar de tu dolor.</p>
     `
   },
   { 
@@ -61,52 +54,49 @@ hoy haces lo mejor que puedes a pesar de tu dolor.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Práctica:</h3>
       <p>Prueba algo que nunca hayas hecho: una comida nueva, visita un sitio diferente de tu localidad, o cambia tu rutina de hoy.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Que siente mi cuerpo al experimentar algo nuevo por
-pequeño que sea? cada cosa nueva que intentas ayuda a tu
-cerebro a reentrenarse para el bienestar.</p>
+      <p>¿Qué siente mi cuerpo al experimentar algo nuevo por pequeño que sea? Cada cosa nueva que intentas ayuda a tu cerebro a reentrenarse para el bienestar.</p>
     `
   },
   { 
-    title: "Día 6: Hidratación Consciente", 
+    title: "Día 6: Baño de Amor Propio y Limpieza Energética", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Enfoque Diario:</h3>
-      <p>Cada vaso de agua que tomes hoy, tómalo con la intención de nutrir, limpiar y calmar tu cuerpo. Manten la botella cerca de ti.</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Convierte tu baño diario en un ritual empezando hoy:</p>
+      <p>Atención profunda, siente el agua limpiando el cansancio.</p>
+      <p class="mt-2">Repite: "Limpio el dolor, me lleno de luz, soy suficiente, soy valiente, soy amor, soy compasión".</p>
+      <p>Opcional: usa aceites naturales, pétalos o música relajante.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Cómo se siente tu cuerpo al recibir este cuidado intencional?</p>
+      <p>¿Qué siento cuando me cuido de forma consciente y me acompaño al bañarme? Aprecia el hermoso templo que habitas y recuerda que aunque duela, es un templo sagrado.</p>
     `
   },
   { 
-    title: "Día 7: Alimentación Consciente", 
+    title: "Día 7: Semana 1 Completada", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">🌟 Afirmación:</h3>
-      <p>"Cada bocado puede ser una caricia al alma."</p>
-      <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Actividad:</h3>
-      <p> Come sin pantallas, masticando lento. repite
-mentalmente “Nutro mi cuerpo con gratitud y amor”.
-Observa cómo te sientes antes, durante y después de comer.   Antes de comer, observa tus alimentos y come despacio, percibiendo su sabor y textura. Habla a tus alimentos y agradéceles por nutrirte.</p>
+      <p class="italic mb-3 font-semibold text-gray-600">¡Felicitaciones por completar tu primera semana!</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Reflexión:</h3>
+      <p>Has dado un paso valiente hacia tu bienestar. Tómate un momento para reconocer tu compromiso contigo misma/o.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Qué sabores y texturas descubriste al comer despacio? ¿Cómo se sintió tu cuerpo al agradecer la comida?</p>
+      <p>¿Qué práctica de esta semana resonó más contigo? ¿Cómo te sientes al completar estos primeros 7 días?</p>
     `
   },
   { 
-    title: "Día 8: Tiempo de calidad compartido", 
+    title: "Día 8: Tiempo de Calidad Compartido", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">🌟 Afirmación:</h3>
-      <p>"Compartir también es sanar."</p>
-      <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Ejercicio:</h3>
-      <p>Pasa un momento agradable con tu mascota, un amigo o familiar. Sal a caminar con él/ella si es posible. Habla de temas que te hagan sonreír.</p>
+      <p class="italic mb-3 font-semibold text-gray-600">Semana 2 — Energía y Movimiento. ¡Eres valiente y te felicito por iniciar una nueva semana de tu proceso!</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Pasa un momento agradable con tu mascota, un amigo o familiar. Sal a caminar con él/ella si es posible. Habla de temas que te hagan sonreír. Evita temas molestos o de dolor.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Cómo se sintió la energía que compartiste? ¿Qué descubriste de ti al compartir con otro?</p>
+      <p>¿Qué siento cuando dedico tiempo de calidad a los seres que amo? "Estar presente cuando compartes con los demás también es amor propio. Compartir también es sanar."</p>
     `
   },
   { 
-    title: "Día 9: Movimiento Suave (Caminata)", 
+    title: "Día 9: Música Sanadora", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Ejercicio:</h3>
-      <p>Realiza una caminata de 15 minutos a un ritmo muy lento y cómodo. Se trata de mover la energía estancada. Si no puedes caminar, haz movimientos suaves de brazos y cuello.</p>
-      <p class="mt-2">Detente si sientes fatiga o dolor intenso.</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Crea tu lista "Renacer": sonidos que te gusten. Escúchala al despertar, antes de dormir o durante tus actividades.</p>
+      <p class="mt-2"><strong>Ejercicio adicional:</strong> Baila suavemente o muévete al ritmo.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Cómo respondió tu cuerpo al movimiento suave de hoy?</p>
+      <p>¿Qué sensaciones trae a mí escuchar música de forma más consciente? "La música y el movimiento actúan en el cerebro de forma efectiva, es una terapia renovadora".</p>
     `
   },
   { 
@@ -121,115 +111,134 @@ Observa cómo te sientes antes, durante y después de comer.   Antes de comer, o
     `
   },
   { 
-    title: "Día 11: La Importancia del Sueño", 
+    title: "Día 11: Alimentación Amorosa y Consciente", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Rutina Nocturna:</h3>
-      <p>Asegúrate de acostarte a la misma hora y evitar luces azules al menos 30 minutos antes de dormir. Bebe una infusión de manzanilla o lavanda.</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Come sin pantallas, masticando lento. Repite mentalmente "Nutro mi cuerpo con gratitud y amor".</p>
+      <p>Observa cómo te sientes antes, durante y después de comer.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>Anota tu calidad de sueño y cómo afecta tu día.</p>
+      <p>¿Qué siente mi cuerpo cuando lo alimento con amor y consciencia? Tu cuerpo es tu templo sagrado y alimentarlo con amor mejora tu energía.</p>
     `
   },
   { 
-    title: "Día 12: Diálogo Interno Positivo", 
+    title: "Día 12: El Anclaje Energético - Soy mi mayor apoyo", 
     content: `
       <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
-      <p>Conviértete en tu mejor amiga/o. Cada vez que te detectes un pensamiento autocrítico, detente y reformúlalo en algo compasivo y realista.</p>
-      <p>Por ejemplo: "Soy suficiente tal y como soy hoy."</p>
+      <p>Dedícate 15 minutos a conversar contigo. ¿Qué te gustaría que alguien te dijera hoy? Puedes decírtelo y sentir tu amor.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Qué pensamientos autocríticos detectaste? ¿Cómo los transformaste?</p>
+      <p>¿Qué partes de mí hacen que me juzgue y no me tenga compasión? Brindate la atención y contención que esperas de otros. Tu amor por ti es el amor más importante.</p>
     `
   },
   { 
     title: "Día 13: Comunicación Consciente con tu cuidador", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Técnica: "Yo siento + necesito + propongo"</h3>
-      <p class="text-sm italic text-gray-600 mb-3">Esta técnica te permite expresar tu experiencia y tu necesidad de forma clara y respetuosa.</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p><strong>"Yo siento + necesito + propongo + yo agradezco"</strong></p>
+      <p>Habla hoy con tu cuidador en un momento de calma que esté receptivo y manifiesta tu necesidad más importante.</p>
       <h4 class="font-bold text-md text-primary-indigo mt-3">Ejemplo:</h4>
-      <p class="text-gray-700 italic">"Yo siento frustración cuando no puedo moverme, necesito tu comprensión, propongo que respiremos juntos unos minutos".</p>
-      <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Acción del Día:</h3>
-      <p>Habla hoy con tu cuidador en un momento de calma que esté receptivo y manifiesta tu necesidad más importante utilizando esta técnica.</p>
+      <p class="text-gray-700 italic">"Yo siento frustración cuando no puedo moverme, necesito tu comprensión, propongo que respiremos juntos unos minutos antes de reaccionar cuando algo nos incomoda".</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Cuál fue la necesidad que lograste comunicar? ¿Cómo te sientes después de haberla expresado?</p>
+      <p>¿Qué siento cuando expreso mis necesidades sin atacar ni juzgar ni ser juzgado? Tu cuidador es parte fundamental en tu proceso, por eso hoy sé compasivo y entiende que para él tampoco es fácil verte sufrir. Su amor por ti le ayuda a hacer lo mejor posible pero la comunicación sana es indispensable.</p>
     `
   },
   { 
-    title: "Día 14: Recapitulación Semanal", 
-    content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Revisión:</h3>
-      <p>Relee tu diario de la última semana. Identifica tu mayor reto y tu mayor avance.</p>
-      <h3 class="font-bold text-lg text-primary-indigo mt-3">🎯 Meta:</h3>
-      <p>Elige una práctica de esta semana para integrarla en tu rutina diaria.</p>
-      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Cuál fue tu mayor reto esta semana? ¿Cuál fue tu mayor avance?</p>
-    `
-  },
-  { 
-    title: "Día 15: Masaje de Manos y Pies", 
+    title: "Día 14: Evaluación de la Semana", 
     content: `
       <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
-      <p>Usa una crema con olor agradable. Dedica 5 minutos a masajear suavemente tus manos y luego tus pies. Usa movimientos lentos y circulares.</p>
-      <p>Esto ayuda a liberar tensión en puntos clave.</p>
+      <p>Revisa tu diario y responde:</p>
+      <ul class="list-disc list-inside ml-4 text-gray-700">
+        <li>¿Qué cambios noto en mi cuerpo?</li>
+        <li>¿Qué prácticas me dan más alivio o bienestar?</li>
+        <li>¿Qué emociones deseo soltar?</li>
+      </ul>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Qué sensaciones descubriste durante el automasaje?</p>
+      <p>Escribe una frase de felicitación y haz algo especial para ti hoy: comer un rico postre, tomarte un descanso o salir con alguien especial. ¡Es tu día para celebrar!</p>
     `
   },
   { 
-    title: "Día 16: Liberación Emocional", 
+    title: "Día 15: Crea tu Hobby Sanador", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✍️ Diario:</h3>
-      <p>Escribe sobre cualquier emoción (tristeza, rabia, frustración) que hayas estado reprimiendo. No la juzgues, solo déjala salir en el papel.</p>
-      <p>Luego, rompe o quema el papel (con cuidado) como símbolo de liberación.</p>
+      <p class="italic mb-3 font-semibold text-gray-600">Semana 3 — Transformación y Sostenibilidad</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Identifica eso que te gusta hacer y quizás has dejado de lado por diferentes razones, anímate a intentarlo. Pinta, canta, teje, escribe, cocina o planta algo.</p>
+      <p class="mt-2"><strong>Clave:</strong> Disfruta sin buscar resultados. El objetivo es sentir placer y conexión contigo.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>¿Qué siento cuando hago lo que me gusta? Tu cerebro reacciona positivamente cuando haces algo que te gusta, segrega sustancias que ayudan al alivio del dolor y a la construcción de nuevas conexiones neuronales.</p>
     `
   },
   { 
-    title: "Día 17: Visualización Sanadora", 
+    title: "Día 16: Nuevas Afirmaciones de Poder", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Meditación Guiada:</h3>
-      <p>Cierra los ojos e imagina una luz cálida y sanadora que entra por tu cabeza y recorre cada parte de tu cuerpo. Visualiza cómo esta luz calma el dolor y devuelve la vitalidad.</p>
-      <p>Mantente en esta visualización por 10 minutos.</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Crea frases adaptadas a tu evolución y ponlas en lugares que puedas ver a diario.</p>
+      <p class="mt-2"><strong>Ejemplo:</strong> "Soy más fuerte de lo que imaginaba".</p>
+      <p>Coloca una en el espejo y léela cada mañana.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Qué sensaciones experimentaste durante la visualización?</p>
+      <p>¿Qué emoción me transmite leerlas? Tú debes ser tu mayor motivador, no lo olvides. ¡Lo estás haciendo muy bien!</p>
     `
   },
   { 
-    title: "Día 18: La Gratitud Expansiva", 
+    title: "Día 17: El Ritual de Establecimiento de Límites Sagrados", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Ejercicio:</h3>
-      <p>Además de tu cuerpo, nombra 5 cosas externas (personas, momentos, objetos) por las que sientes profunda gratitud hoy. Siente esa emoción en tu pecho.</p>
-      <p>La gratitud eleva la vibración y ayuda a manejar el dolor.</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Inhala profundamente, exhala con sonido o suspiro largo. Permite que salgan emociones reprimidas sin miedo ni juicio.</p>
+      <p class="mt-2">Escribe una lista de los límites que crees que debes poner hoy, incluso a ti misma/o.</p>
+      <p class="mt-2"><strong>Ejemplo:</strong> Hoy no me excederé en mis actividades, hoy comunicaré lo que me molesta sin temor.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>Escribe tus 5 motivos de gratitud:</p>
+      <p>Lee tu lista en la noche o en la mañana y recuerda que poner límites también es amor propio.</p>
     `
   },
   { 
-    title: "Día 19: Cuidado de la Postura", 
+    title: "Día 18: Amor Propio Frente al Espejo", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Conciencia Corporal:</h3>
-      <p>A lo largo del día, haz una pausa de 30 segundos cada hora. Chequea tu postura: hombros relajados, espalda recta, mentón paralelo al suelo.</p>
-      <p><strong>Mini-Afirmación:</strong> "Mi cuerpo es fuerte y alineado."</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Mírate con ternura, sonríe y repite:</p>
+      <p class="italic mt-2">"Me veo, me acepto, me abrazo. Estoy aprendiendo a amarme".</p>
+      <p class="mt-2">Escribe: 3 cualidades que reconoces en ti hoy.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Qué cambios notaste en tu cuerpo al mejorar tu postura?</p>
+      <p>¿Qué siento cuando me observo con amor? Tu cerebro y tu cuerpo notan cuando prestas atención y tus actos de amor propio, por pequeños que parezcan, nutren tu amor y fortalecen tu relación contigo y con los demás.</p>
+    `
+  },
+  { 
+    title: "Día 19: Reconectar con la Naturaleza y el Silencio Interior", 
+    content: `
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Si puedes, sal a un lugar donde haya plantas, árboles o cielo. Si no es posible, observa una planta, una flor o mira por la ventana.</p>
+      <p class="mt-2">Respira conscientemente mientras repites mentalmente: "Soy parte de la vida, estoy en movimiento, estoy viva".</p>
+      <p class="mt-2">Si te es posible, toca la tierra, una hoja o un tronco y siente su energía. Permite unos minutos de silencio total, sin música, sin distracciones.</p>
+      <p class="mt-2">Observa la inmensidad del cielo y siente su conexión contigo. Recibe su energía. Agradece.</p>
+      <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
+      <p>Anota cómo te sientes después de esta experiencia. ¿En qué parte de tu cuerpo sientes calma? ¿Qué te dice la naturaleza sobre tu propio proceso de florecer?</p>
+      <p class="mt-2 italic">Repite mentalmente: "La calma de la tierra habita en mí. Hoy florezco, sin prisa y sin culpa".</p>
     `
   },
   { 
     title: "Día 20: Celebración del Proceso", 
     content: `
       <p class="italic mb-3 font-semibold text-gray-600">"He caminado con valor".</p>
-      <h3 class="font-bold text-lg text-primary-indigo">✅ Reconocimiento:</h3>
-      <p>Escribe una carta de amor y gratitud a tu cuerpo por su resistencia, su mensaje y por haberte acompañado en este proceso.</p>
+      <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
+      <p>Agradece tus avances. Repite para ti: "He caminado con valor".</p>
+      <p class="mt-2">Escribe una carta de amor y gratitud a tu cuerpo por su resistencia. Menciona lo que más recuerdas de este proceso, haz una lista de las prácticas que se han vuelto un hábito para ti.</p>
+      <p class="mt-2">Menciona si alguien ha notado algún cambio en ti y lo ha manifestado. Piensa en alguien con quien compartirías esta experiencia.</p>
+      <p class="mt-2">Agradece al universo por poner en tu camino estas herramientas valiosas y a ti por el compromiso contigo para aprovecharlas.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Qué le dirías a la versión de ti que comenzó este proceso hace 20 días?</p>
+      <p>¿Qué le dirías a la versión de ti que comenzó este proceso? El mayor reconocimiento debe ser el propio. Abrázate y recuerda que eres valiente y lo estás haciendo bien.</p>
     `
   },
   { 
     title: "Día 21: Ritual de Cierre y Renacimiento", 
     content: `
       <h3 class="font-bold text-lg text-primary-indigo">✅ Ritual:</h3>
-      <p>Prepara una vela morada y enciéndela con esta intención: <strong>"Transformo el dolor en sabiduría. Soy luz, soy fuerza, soy renacimiento".</strong></p>
-      <p>Coloca tu diario y tus frases a tu alrededor. Respira, sonríe y honra tu camino.</p>
-      <h3 class="font-extrabold text-2xl text-primary-indigo mt-4 text-center">¡Felicitaciones! ¡Lo lograste guerrer@!</h3>
+      <p>Prepara una vela morada y enciéndela con esta intención:</p>
+      <p class="italic mt-2 font-semibold">"Transformo el dolor en sabiduría. Soy luz, soy fuerza, soy renacimiento".</p>
+      <p class="mt-2">Coloca tu diario y tus frases a tu alrededor. Respira, sonríe y honra tu camino. Abrázate y siente tu amor.</p>
+      <h3 class="font-extrabold text-2xl text-primary-indigo mt-4 text-center">¡Lo lograste guerrer@!</h3>
+      <p class="mt-3 text-gray-700">Es importante que releas tu diario de transformación y valores todo lo que has logrado en estos 21 días.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>Reflexión final: ¿Qué has aprendido en estos 21 días?</p>
+      <p>Escribe 5 cosas que has logrado hacer diferente al pasado. Ejemplo: Aprendí que puedo poner límites, expresar mis necesidades y pedir ayuda.</p>
+      <p class="mt-2 font-semibold text-purple-700">Descarga tu proceso en la app y califica tu experiencia.</p>
+      <p class="mt-2 italic text-gray-600">Te felicito de corazón por hacer parte activa en la mejora de tu calidad de vida, fortalecer tu amor propio, tu templo sagrado y tu cerebro con prácticas positivas para tu bienestar.</p>
+      <p class="mt-2 font-semibold text-green-600">Bendiciones, salud y amor para ti. ¡A volar hermosa mariposa, tus alas están listas!</p>
     `
   }
 ];
