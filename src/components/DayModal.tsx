@@ -31,36 +31,29 @@ const DayModal: React.FC<DayModalProps> = ({
   //const dayNumber = dayIndex + 1;
 
   // Inject textareas into content
-  const injectTextAreas = (content: string): string => {
-    const indicators = [
-      '🌟 Afirmación:', '✅ Ejercicio:', '✅ Tarea:', '✅ Práctica:', '✅ Enfoque Diario:', '✅ Revisión:',
-      '✅ Reconocimiento:', '✅ Ritual:', '✅ Meditación Guiada:', '✅ Conciencia Corporal:',
-      '✍️ Diario:', '🎯 Meta:', '✅ Actividad:', '✅ Técnica:', '✅ Acción del Día:'
-    ];
+ // Inject textareas into content - Using <br/> as marker
+const injectTextAreas = (content: string): string => {
+  let modifiedContent = content;
+  let activityIndex = 0;
 
-    let modifiedContent = content;
-    let activityIndex = 0;
+  // Find all <br/> tags and replace them with textarea
+  const brRegex = /<br\s*\/?>/gi;
+  
+  modifiedContent = modifiedContent.replace(brRegex, () => {
+    const textareaHTML = `
+      <textarea 
+        class="w-full mt-3 p-3 border-2 border-purple-300 rounded-lg text-sm text-gray-700 focus:ring-2 focus:ring-primary-indigo focus:border-primary-indigo transition duration-150 bg-purple-50" 
+        rows="4" 
+        placeholder="Escribe tu reflexión aquí..." 
+        data-field="dayActivities" 
+        data-activity-index="${activityIndex++}"
+      ></textarea>
+    `;
+    return textareaHTML;
+  });
 
-    indicators.forEach(indicator => {
-      const escapedIndicator = indicator.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const regex = new RegExp(`(<h[34][^>]*>${escapedIndicator}[^<]*<\\/h[34]>\\s*(?:<p[^>]*>[^<]*<\\/p>)?|(<h3[^>]*>✅ Acción del Día:<\\/h3>\\s*<p>[^<]*<\\/p>))`, 'gs');
-
-      modifiedContent = modifiedContent.replace(regex, (match) => {
-        const textareaHTML = `
-          <textarea 
-            class="w-full mt-2 p-2 border border-gray-300 rounded-lg text-sm text-gray-700 focus:ring-2 focus:ring-primary-indigo focus:border-primary-indigo transition duration-150" 
-            rows="3" 
-            placeholder="Escribe tu reflexión o respuesta aquí..." 
-            data-field="dayActivities" 
-            data-activity-index="${activityIndex++}"
-          ></textarea>
-        `;
-        return match + textareaHTML;
-      });
-    });
-
-    return modifiedContent;
-  };
+  return modifiedContent;
+};
 
   // Comment button for day 21
   const getCommentButtonHtml = (): string => {
