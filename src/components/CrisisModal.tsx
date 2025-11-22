@@ -7,7 +7,7 @@ type CrisisModalProps = {
 const CrisisModal: React.FC<CrisisModalProps> = ({ onClose }) => {
   return (
     <div 
-      className="fixed inset-0 bg-black bg-opacity-50 flex modal-overlay items-center justify-center p-4" 
+      className="fixed inset-0 bg-black bg-opacity-50 flex modal-overlay items-center justify-center p-4 " 
       onClick={onClose}
     >
       <div 
@@ -23,7 +23,7 @@ const CrisisModal: React.FC<CrisisModalProps> = ({ onClose }) => {
           </h2>
           <button 
             onClick={onClose} 
-            className="text-gray-400 hover:text-gray-700 transition duration-150"
+            className="text-gray-400 hover:text-gray-700 transition duration-150 cursor-pointer"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -41,7 +41,7 @@ const CrisisModal: React.FC<CrisisModalProps> = ({ onClose }) => {
             <h3 className="font-extrabold text-xl text-rescue-red">1. Evalúa la Situación</h3>
             <p className="mt-1">Hazte esta pregunta:</p>
             <p className="mt-1 font-bold italic">"¿Necesito asistencia médica o puedo manejarlo en casa?"</p>
-            <p className="text-sm mt-1">Si los síntomas son intensos o diferentes a lo habitual, **busca ayuda médica**.</p>
+            <p className="text-sm mt-1">Si los síntomas son intensos o diferentes a lo habitual, <b>busca ayuda médica</b>.</p>
           </div>
           
           {/* 2. Si puedes manejarlo en casa */}
@@ -50,7 +50,7 @@ const CrisisModal: React.FC<CrisisModalProps> = ({ onClose }) => {
           {/* 3. Respira conscientemente */}
           <div className="p-3 bg-indigo-50 rounded-lg">
             <h4 className="font-bold text-lg text-primary-indigo">3. Respira Consciente (3-5 minutos)</h4>
-            <p className="text-sm">Inhala contando **4**, retén **2**, exhala **6**. Siente cómo el aire limpia tu cuerpo desde dentro.</p>
+            <p className="text-sm">Inhala contando <b>4</b>, retén <b>2</b>, exhala <b>6</b>. Siente cómo el aire limpia tu cuerpo desde dentro.</p>
           </div>
 
           {/* 4. Conecta con un anclaje emocional */}
@@ -74,7 +74,7 @@ const CrisisModal: React.FC<CrisisModalProps> = ({ onClose }) => {
           {/* 7. Visualización energética */}
           <div className="p-3 bg-indigo-50 rounded-lg">
             <h4 className="font-bold text-lg text-primary-indigo">7. Visualización Energética</h4>
-            <p className="text-sm">Imagina una luz violeta recorriendo el área afectada. Con cada respiración, la luz **disuelve el dolor** y lo transforma en calma.</p>
+            <p className="text-sm">Imagina una luz violeta recorriendo el área afectada. Con cada respiración, la luz <b>disuelve el dolor</b> y lo transforma en calma.</p>
           </div>
 
           {/* Después de la crisis */}
@@ -86,15 +86,22 @@ const CrisisModal: React.FC<CrisisModalProps> = ({ onClose }) => {
           </ul>
 
           {/* Intención del plan */}
-          <div className="p-3 bg-primary-indigo text-white rounded-lg mt-4">
-            <h4 className="font-extrabold text-lg">Intención del Plan:</h4>
-            <p className="text-sm">No es para eliminar el dolor, sino para transformar tu relación con él, aprender a escucharlo y responder con **compasión**, no con miedo. Es un recordatorio de tu fuerza interior.</p>
+          <div className="p-3 pt-8 pb-9 bg-violet-100 text-gray-700 rounded-lg mt-4">
+            <h4 className="font-extrabold text-lg mb-1">Intención del Plan:</h4>
+            <p className="text-sm">No es para eliminar el dolor, sino para transformar tu relación con él, aprender a escucharlo y responder con <b>compasión</b>, no con miedo. Es un recordatorio de tu fuerza interior.</p>
           </div>
         </div>
+        
+        <a 
+          href="https://drive.google.com/file/d/1AUiyYs0so3Y5SRQc7g1zQ1d8R_WbdkVm/view?usp=drivesdk" target="_blank"
+          className="mt-6 w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-violet-700 transition duration-200 shadow-md cursor-pointer block text-center"
+        >
+          5 Pasos para manejar el Brote de Dolor
+        </a>
 
         <button 
           onClick={onClose} 
-          className="mt-6 w-full py-3 bg-rescue-red text-white font-semibold rounded-lg hover:bg-red-700 transition duration-200 shadow-md"
+          className="mt-6 w-full py-3 bg-rescue-red text-white font-semibold rounded-lg hover:bg-red-700 transition duration-200 shadow-md cursor-pointer"
         >
           Entendido, Cerrar Plan
         </button>
