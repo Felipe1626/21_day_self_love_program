@@ -43,7 +43,7 @@ export const getMorningRoutineHtml = (dayIndex: number, morningPrompts: { affirm
       
       <div class="mb-5">
         <p class="font-semibold text-gray-700">Meditación Guiada Matutina:</p>
-        <a href="https://youtu.be/tmR2zBgaoSM?si=6wxjVExoOeG2lORG" target="_blank"
+        <a href="https://youtu.be/Y7tMbI2r0nM?si=Am2thaGFSsce63oG" target="_blank"
             class="text-blue-600 hover:text-blue-800 underline block mt-1 font-medium">
           ▶️ Click aquí: Respiración Matutina (YouTube)
         </a>

@@ -6,7 +6,9 @@ export const dailyContent: DayContent[] = [
     content: `
       <p class="italic mb-3 font-semibold text-gray-600">"Estás dando el paso más valiente: sanar desde el amor".</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Ejercicio:</h3>
-      <p>Escribe 3 cosas por las que agradeces a tu cuerpo hoy.</p>
+      <p>Técnica del Espejo y la Afirmación del "Yo Soy
+Suficiente HOY". Escribe 3 cosas por las que agradeces a tu
+cuerpo hoy.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
       <p>¿Qué emociones te genera comenzar este proceso?</p>
     `
@@ -25,21 +27,30 @@ export const dailyContent: DayContent[] = [
     title: "Día 3: Respiración Consciente y Presencia", 
     content: `
       <h3 class="font-bold text-lg text-primary-indigo">✅ Práctica:</h3>
-      <p>5 minutos, tres veces al día. Inhala en 4 tiempos, retén 2, exhala en 6. Visualiza: con cada exhalación, liberas tensión y cansancio.</p>
+      <p>El Ritual del "Cuerpo Amigo" 5 minutos, tres veces al
+día. repite, mi cuerpo es mi amigo, mi templo aunque duela yo
+puedo escucharlo y amarlo, Abrazate y siente tu propia
+compañia y apoyo. Inhala en 4 tiempos, retén 2, exhala en 6. Visualiza: con cada exhalación, liberas tensión y cansancio.</p>
       <p>Apóyate con música suave o sonidos naturales.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Cómo te sentiste durante esta práctica de respiración?</p>
+      <p>¿Cómo se siente cuando me abrazo con amor? hoy siente que
+no estas sola/o cuentas con tu amor y comprension.</p>
     `
   },
   { 
     title: "Día 4: Escucha Activa del Cuerpo", 
     content: `
       <h3 class="font-bold text-lg text-primary-indigo">✅ Ejercicio:</h3>
-      <p>Siéntate en silencio 5 minutos. Lleva la atención a distintas partes del cuerpo. Pregúntate: "¿Qué necesita hoy esta parte de mí?"</p>
+      <p>"Sombra Aceptada" (Perdón Profundo) Siéntate en silencio
+5 minutos. Lleva la atención a distintas partes del cuerpo. Hay dolor?
+donde duele? como me hace sentir emocionalmente? con compasión
+hacia ti: Pregúntate: "¿Qué necesita hoy esta parte de mí?"</p>
       <p>Anota sensaciones sin juzgarlas.</p>
       <p class="text-xs italic mt-2 text-gray-500">Recordatorio: La hidratación se mantiene como apoyo diario.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>Anota las sensaciones que detectaste en tu cuerpo:</p>
+      <p>¿Que partes de mi hacen que me juzgue y no me tenga
+compasión? perdonate como perdonas a otros y recuerda que
+hoy haces lo mejor que puedes a pesar de tu dolor.</p>
     `
   },
   { 
@@ -50,7 +61,9 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Práctica:</h3>
       <p>Prueba algo que nunca hayas hecho: una comida nueva, visita un sitio diferente de tu localidad, o cambia tu rutina de hoy.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
-      <p>¿Qué hiciste de nuevo hoy? ¿Qué emociones experimentaste al salir de tu zona de confort?</p>
+      <p>¿Que siente mi cuerpo al experimentar algo nuevo por
+pequeño que sea? cada cosa nueva que intentas ayuda a tu
+cerebro a reentrenarse para el bienestar.</p>
     `
   },
   { 
@@ -68,7 +81,9 @@ export const dailyContent: DayContent[] = [
       <h3 class="font-bold text-lg text-primary-indigo">🌟 Afirmación:</h3>
       <p>"Cada bocado puede ser una caricia al alma."</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Actividad:</h3>
-      <p>Antes de comer, observa tus alimentos y come despacio, percibiendo su sabor y textura. Habla a tus alimentos y agradéceles por nutrirte.</p>
+      <p> Come sin pantallas, masticando lento. repite
+mentalmente “Nutro mi cuerpo con gratitud y amor”.
+Observa cómo te sientes antes, durante y después de comer.   Antes de comer, observa tus alimentos y come despacio, percibiendo su sabor y textura. Habla a tus alimentos y agradéceles por nutrirte.</p>
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✍️ Diario:</h3>
       <p>¿Qué sabores y texturas descubriste al comer despacio? ¿Cómo se sintió tu cuerpo al agradecer la comida?</p>
     `
