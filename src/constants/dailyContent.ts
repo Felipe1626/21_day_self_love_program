@@ -57,8 +57,7 @@ export const dailyContent: DayContent[] = [
   { 
     title: "Día 5: Atreverse a lo Nuevo", 
     content: `
-      <h3 class="font-bold text-lg text-primary-indigo">🌟 Afirmación:</h3>
-      <p>"Cada experiencia nueva es una semilla de vida."</p>
+      
       <h3 class="font-bold text-lg text-primary-indigo mt-3">✅ Práctica:</h3>
       <p>Prueba algo que nunca hayas hecho: una comida nueva, visita un sitio diferente de tu localidad, o cambia tu rutina de hoy.</p>
       <br/>
