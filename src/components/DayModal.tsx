@@ -192,7 +192,7 @@ const injectTextAreas = (content: string): string => {
           Rutina de Noche: Descanso Sagrado
         </h3>
         <p class="text-gray-700 mb-3 text-sm">Prepara tu cuerpo para el sueño reparador con esta meditación de respiración guiada:</p>
-        <a href="https://youtu.be/l-Y3yUNlMyI?si=xfooZCkpEvdzL5Zj" target="_blank" 
+        <a href="https://youtu.be/i_zqVSAPWR4" target="_blank" 
            class="block w-full py-3 bg-indigo-200 text-indigo-800 font-semibold rounded-lg text-center text-sm hover:bg-indigo-300 transition shadow-inner">
           ▶️ Click aquí: Respiración Guiada Nocturna (YouTube)
         </a>
